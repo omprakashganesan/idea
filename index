@@ -1,0 +1,15 @@
+def calculate_future_value(monthly_savings, annual_interest_rate, months, initial_savings=0):
+    monthly_interest_rate = annual_interest_rate / 12 / 100
+    future_value = initial_savings
+    for _ in range(months):
+        future_value = (future_value + monthly_savings) * (1 + monthly_interest_rate)
+    return future_value
+
+# Example usage:
+monthly_savings = 30000  # Monthly amount saved
+annual_interest_rate = 6  # Annual interest rate in percentage
+months = 12  # Number of months
+initial_savings = 50000  # Initial amount already saved
+
+future_value = calculate_future_value(monthly_savings, annual_interest_rate, months, initial_savings)
+print(f"The future value of your savings will be Rs. {future_value:.2f}.")
